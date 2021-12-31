@@ -1,5 +1,22 @@
-<script>
-	import '../app.css';
+<script context="module">
+	export const load = async ({ fetch }) => {
+		try {
+			const res = await fetch('/pages.json');
+			const { pages } = await res.json();
+			return { props: { pages } };
+		} catch (err) {
+			console.log('Hubo un error');
+		}
+	};
 </script>
 
-<slot />
+<script>
+	import '../app.css';
+	import Nav from '../components/Navbar.svelte';
+	export let pages;
+</script>
+
+<Nav {pages} />
+<main class="flex flex-col items-center m-auto">
+	<slot />
+</main>
