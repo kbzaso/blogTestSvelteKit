@@ -13,6 +13,14 @@
 <script>
 	import '../app.css';
 	import Nav from '../components/Navbar.svelte';
+
+	import { onMount } from 'svelte';
+	import { themeChange } from 'theme-change';
+
+	onMount(async () => {
+		themeChange(false);
+	});
+
 	export let pages;
 </script>
 

@@ -1,4 +1,5 @@
 <script>
+	import ThemeSelect from './theme-select.svelte';
 	export let pages;
 </script>
 
@@ -13,5 +14,8 @@
 		{#each pages as { title, slug }}
 			<a href={`/${slug}`} class="btn btn-ghost btn-sm rounded-btn"> {title} </a>
 		{/each}
+	</div>
+	<div class="navbar-end">
+		<ThemeSelect />
 	</div>
 </div>

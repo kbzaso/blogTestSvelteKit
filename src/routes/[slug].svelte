@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog | Bienvenido</title>
+	<title>Blog | {page.title}</title>
 </svelte:head>
 
 <div class="w-10/12">
